@@ -19,3 +19,12 @@
 ```git clone https://github.com/vdbalbom/gamemaker.git```
 #### Run
 ```open -n -a love "gamemaker"```
+
+### Controls
+| <b>Action</b>   | <b>Control</b> |
+| -------------   | -------------- |
+|    Move Right   |        →       |
+|    Move Left    |        ←       |
+|  Move Backward  |        ↑       |
+|   Move Forward  |        ↓       |
+|       Jump      |        z       |
