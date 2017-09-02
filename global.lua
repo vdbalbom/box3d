@@ -1,4 +1,5 @@
 DT = 0
+G = 10 * 500
 SAMPLE = "sample"
 RIGHT = "right"
 LEFT = "left"
