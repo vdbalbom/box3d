@@ -1,0 +1,11 @@
+DT = 0
+SAMPLE = "sample"
+RIGHT = "right"
+LEFT = "left"
+DOWN = "down"
+UP = "up"
+BEHIND = "behind"
+FRONT = "front"
+FILL = "fill"
+LINE = "line"
+MARGIN = 4
