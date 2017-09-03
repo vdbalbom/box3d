@@ -2,10 +2,10 @@ local background = require("background")
 local character = require("character")
 local global = require("global")
 
-local resolution = {wiDTh = 1000, height = 1000}
+local resolution = {width = 1000, height = 1000}
 
 function love.load()
-  love.window.setMode(resolution.wiDTh,resolution.height)
+  love.window.setMode(resolution.width,resolution.height)
 end
 
 function love.draw()
