@@ -11,10 +11,10 @@ FILL = "fill"
 LINE = "line"
 MARGIN = 4
 CURRENT_LEVEL = "level1"
-RESOLUTION = 1000
+RESOLUTION = 100 -- percent
 
 function calcResolution(number)
-  return number*RESOLUTION/1000
+  return number*RESOLUTION/100
 end
 
 function getBox()
