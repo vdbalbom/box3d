@@ -10,3 +10,4 @@ FRONT = "front"
 FILL = "fill"
 LINE = "line"
 MARGIN = 4
+CURRENT_LEVEL = "level1"
