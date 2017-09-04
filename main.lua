@@ -1,3 +1,4 @@
+local box_controller = require("box_controller")
 local character = require("character")
 local global = require("global")
 
@@ -8,6 +9,7 @@ function love.load()
 end
 
 function love.draw()
+  drawBox()
   setCharacter(SAMPLE)
 end
 
