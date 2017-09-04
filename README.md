@@ -28,3 +28,6 @@
 |  Move Backward  |        ↑       |
 |   Move Forward  |        ↓       |
 |       Jump      |        z       |
+
+#### Pig's sprites source:
+##### https://www.spriters-resource.com/pc_computer/adventuretimeexplorethedungeonbecauseidontknow/sheet/59168/
