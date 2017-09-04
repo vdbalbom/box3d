@@ -1,4 +1,3 @@
-local background = require("background")
 local character = require("character")
 local global = require("global")
 
@@ -9,7 +8,6 @@ function love.load()
 end
 
 function love.draw()
-  setBackground(SAMPLE)
   setCharacter(SAMPLE)
 end
 
