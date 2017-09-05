@@ -1,5 +1,5 @@
 local box_controller = require("box_controller")
-local character = require("character")
+local character_controller = require("character_controller")
 local global = require("global")
 
 love.window.setMode(calcResolution(getBox().size.width),calcResolution(getBox().size.height))
@@ -10,10 +10,10 @@ end
 
 function love.draw()
   drawBox()
-  setCharacter(SAMPLE)
+  drawCharacter()
 end
 
 function love.update(dt)
   DT = dt
-  updateCharacter(SAMPLE)
+  updateCharacter()
 end
