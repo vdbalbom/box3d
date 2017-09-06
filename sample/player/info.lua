@@ -7,8 +7,8 @@ player = {
   speed = 200,
   jump_height = 200,
   position = {
-    x = 975,
-    y = 950,
+    x = 500,
+    y = 0,
     z = 100
   }
 }
