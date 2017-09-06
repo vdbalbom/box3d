@@ -77,8 +77,6 @@ function drawCharacter()
   bh = calcResolution(getBox().size.height)
   bd = calcResolution(getBox().size.depth)
 
-
-
   x = x - pw/2
   y = y + ph
   z = z/2
