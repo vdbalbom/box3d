@@ -41,15 +41,15 @@ function updateCharacter()
     end
   end
   if love.keyboard.isDown(UP) then
-    p.position.z = p.position.z - p.speed*DT/2
+    p.position.z = p.position.z - p.speed*DT
     if checkCollision() then
-      p.position.z = p.position.z + p.speed*DT/2
+      p.position.z = p.position.z + p.speed*DT
     end
   end
   if love.keyboard.isDown(DOWN) then
-    p.position.z = p.position.z + p.speed*DT/2
+    p.position.z = p.position.z + p.speed*DT
     if checkCollision() then
-      p.position.z = p.position.z - p.speed*DT/2
+      p.position.z = p.position.z - p.speed*DT
     end
   end
   if love.keyboard.isDown("z") then
@@ -77,11 +77,17 @@ function drawCharacter()
   bh = calcResolution(getBox().size.height)
   bd = calcResolution(getBox().size.depth)
 
-  sizeX = pw * (bw-2*(bd-z))/bw
-  sizeY = ph * (bh-2*(bd-z))/bh
+
 
   x = x - pw/2
   y = y + ph
+  z = z/2
+
+  bd = bd/2
+  pd = pd/2
+
+  sizeX = pw * (bw-2*(bd-z))/bw
+  sizeY = ph * (bh-2*(bd-z))/bh
 
   positionX = bd - z + x * (bw-2*(bd-z))/bw
   positionY = bh - (bd - z + y * (bh-2*(bd-z))/bh)
