@@ -1,8 +1,8 @@
 box = {
   size = {
-    height = 1000,
-    width = 1000,
-    depth = 150
+    height = 700,
+    width = 700,
+    depth = 200
   },
   image = {
     down = love.graphics.newImage("sample/boxes/box1/images/down.png"),
