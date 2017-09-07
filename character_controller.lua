@@ -24,18 +24,12 @@ function checkCollision()
   return checkBoxCollision()
 end
 
-function updateObject(){
-
-}
-
 function updateCharacter()
 
   p = getPlayer()
   b = getBox()
 
-  if b.gravity.surface ~= "none" and p.gravity_sensitive then
-    gravity(p,b)
-  end
+  gravity(p,b)
 
   if love.keyboard.isDown(RIGHT) then
     p.position.x = p.position.x + p.speed["x+"]*DT
