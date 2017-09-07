@@ -1,58 +1,55 @@
 local contants = require("global")
-local GRAVITY_TIME = 0
 
-function gravity()
-  p = getPlayer()
-  b = getBox()
+function gravity(object, box)
 
-  GRAVITY_TIME = GRAVITY_TIME + DT
+  object.gravity_time = object.gravity_time + DT
 
-  posi= b.gravity.acceleration*GRAVITY_TIME*GRAVITY_TIME
+  posi= box.gravity.acceleration*object.gravity_time*object.gravity_time
 
-  if b.gravity.surface == "down" then
-    p.position.y = p.position.y - posi
+  if box.gravity.surface == "down" then
+    object.position.y = object.position.y - posi
     if checkCollision() then
-      p.position.y = p.position.y + posi
-      GRAVITY_TIME = 0
+      object.position.y = object.position.y + posi
+      object.gravity_time = 0
     end
-    if love.keyboard.isDown("a") and p.speed["y+"] > 0 then
-      GRAVITY_TIME = 0
+    if love.keyboard.isDown("a") and object.speed["y+"] > 0 then
+      object.gravity_time = 0
     end
-  elseif b.gravity.surface == "up" then
-    p.position.y = p.position.y + posi
+  elseif box.gravity.surface == "up" then
+    object.position.y = object.position.y + posi
     if checkCollision() then
-      p.position.y = p.position.y - posi
-      GRAVITY_TIME = 0
+      object.position.y = object.position.y - posi
+      object.gravity_time = 0
     end
-    if love.keyboard.isDown("z") and p.speed["y-"] > 0 then
-      GRAVITY_TIME = 0
+    if love.keyboard.isDown("z") and object.speed["y-"] > 0 then
+      object.gravity_time = 0
     end
-  elseif b.gravity.surface == "left" then
-    p.position.x = p.position.x - posi
+  elseif box.gravity.surface == "left" then
+    object.position.x = object.position.x - posi
     if checkCollision() then
-      p.position.x = p.position.x + posi
-      GRAVITY_TIME = 0
+      object.position.x = object.position.x + posi
+      object.gravity_time = 0
     end
-    if love.keyboard.isDown("right") and p.speed["x+"] > 0 then
-      GRAVITY_TIME = 0
+    if love.keyboard.isDown("right") and object.speed["x+"] > 0 then
+      object.gravity_time = 0
     end
-  elseif b.gravity.surface == "right" then
-    p.position.x = p.position.x + posi
+  elseif box.gravity.surface == "right" then
+    object.position.x = object.position.x + posi
     if checkCollision() then
-      p.position.x = p.position.x - posi
-      GRAVITY_TIME = 0
+      object.position.x = object.position.x - posi
+      object.gravity_time = 0
     end
-    if love.keyboard.isDown("left") and p.speed["x-"] > 0 then
-      GRAVITY_TIME = 0
+    if love.keyboard.isDown("left") and object.speed["x-"] > 0 then
+      object.gravity_time = 0
     end
-  elseif b.gravity.surface == "background" then
-    p.position.z = p.position.z - posi
+  elseif box.gravity.surface == "background" then
+    object.position.z = object.position.z - posi
     if checkCollision() then
-      p.position.z = p.position.z + posi
-      GRAVITY_TIME = 0
+      object.position.z = object.position.z + posi
+      object.gravity_time = 0
     end
-    if love.keyboard.isDown("down") and p.speed["z+"] > 0 then
-      GRAVITY_TIME = 0
+    if love.keyboard.isDown("down") and object.speed["z+"] > 0 then
+      object.gravity_time = 0
     end
   end
 end
@@ -87,7 +84,7 @@ function updateCharacter()
   b = getBox()
 
   if b.gravity.surface ~= "none" then
-    gravity()
+    gravity(p,b)
   end
 
   if love.keyboard.isDown(RIGHT) then

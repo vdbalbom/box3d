@@ -19,5 +19,6 @@ player = {
     x = 300,
     y = 0,
     z = 100
-  }
+  },
+  gravity_time = 0
 }
