@@ -4,7 +4,16 @@ player = {
     width = 50,
     depth = 8
   },
-  speed = 200,
+  speed = {
+    -- If the speed for some direction is zero then the moviment
+    -- on this direction is forbidden.
+    ["x+"] = 200,
+    ["x-"] = 200,
+    ["y+"] = 200,
+    ["y-"] = 200,
+    ["z+"] = 200,
+    ["z-"] = 200
+  },
   jump_height = 200,
   position = {
     x = 300,

@@ -29,39 +29,39 @@ function updateCharacter()
   p = getPlayer()
 
   if love.keyboard.isDown(RIGHT) then
-    p.position.x = p.position.x + p.speed*DT
+    p.position.x = p.position.x + p.speed["x+"]*DT
     if checkCollision() then
-      p.position.x = p.position.x - p.speed*DT
+      p.position.x = p.position.x - p.speed["x+"]*DT
     end
   end
   if love.keyboard.isDown(LEFT) then
-    p.position.x = p.position.x - p.speed*DT
+    p.position.x = p.position.x - p.speed["x-"]*DT
     if checkCollision() then
-      p.position.x = p.position.x + p.speed*DT
+      p.position.x = p.position.x + p.speed["x-"]*DT
     end
   end
   if love.keyboard.isDown(UP) then
-    p.position.z = p.position.z - p.speed*DT
+    p.position.z = p.position.z - p.speed["z-"]*DT
     if checkCollision() then
-      p.position.z = p.position.z + p.speed*DT
+      p.position.z = p.position.z + p.speed["z-"]*DT
     end
   end
   if love.keyboard.isDown(DOWN) then
-    p.position.z = p.position.z + p.speed*DT
+    p.position.z = p.position.z + p.speed["z+"]*DT
     if checkCollision() then
-      p.position.z = p.position.z - p.speed*DT
+      p.position.z = p.position.z - p.speed["z+"]*DT
     end
   end
   if love.keyboard.isDown("z") then
-    p.position.y = p.position.y - p.speed*DT
+    p.position.y = p.position.y - p.speed["y-"]*DT
     if checkCollision() then
-      p.position.y = p.position.y + p.speed*DT
+      p.position.y = p.position.y + p.speed["y-"]*DT
     end
   end
   if love.keyboard.isDown("a") then
-    p.position.y = p.position.y + p.speed*DT
+    p.position.y = p.position.y + p.speed["y+"]*DT
     if checkCollision() then
-      p.position.y = p.position.y - p.speed*DT
+      p.position.y = p.position.y - p.speed["y+"]*DT
     end
   end
 end
