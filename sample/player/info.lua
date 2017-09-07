@@ -20,5 +20,6 @@ player = {
     y = 0,
     z = 100
   },
-  gravity_time = 0
+  gravity_time = 0,
+  gravity_sensitive = true
 }

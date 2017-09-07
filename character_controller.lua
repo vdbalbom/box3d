@@ -24,12 +24,16 @@ function checkCollision()
   return checkBoxCollision()
 end
 
+function updateObject(){
+
+}
+
 function updateCharacter()
 
   p = getPlayer()
   b = getBox()
 
-  if b.gravity.surface ~= "none" then
+  if b.gravity.surface ~= "none" and p.gravity_sensitive then
     gravity(p,b)
   end
 
