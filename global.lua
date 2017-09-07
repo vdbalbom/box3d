@@ -33,6 +33,28 @@ function getLevel()
   return level
 end
 
+function checkBoxCollision(object,box)
+  if object.position.x > box.size.width - object.size.width/2 then
+    return true
+  elseif object.position.x < 0 + object.size.width/2 then
+    return true
+  elseif object.position.z > box.size.depth then
+    return true
+  elseif object.position.z < 0 + object.size.depth then
+    return true
+  elseif object.position.y > box.size.height - object.size.height then
+    return true
+  elseif object.position.y < 0 then
+    return true
+  else
+    return false
+  end
+end
+
+function checkCollision(object,box)
+  return checkBoxCollision(object,box)
+end
+
 function gravityToControllableObject(object, box)
   if box.gravity.surface ~= "none" and object.gravity_sensitive then
     object.gravity_time = object.gravity_time + DT
@@ -41,7 +63,7 @@ function gravityToControllableObject(object, box)
 
     if box.gravity.surface == "down" then
       object.position.y = object.position.y - posi
-      if checkCollision() then
+      if checkCollision(object,box) then
         object.position.y = object.position.y + posi
         object.gravity_time = 0
       end
@@ -50,7 +72,7 @@ function gravityToControllableObject(object, box)
       end
     elseif box.gravity.surface == "up" then
       object.position.y = object.position.y + posi
-      if checkCollision() then
+      if checkCollision(object,box) then
         object.position.y = object.position.y - posi
         object.gravity_time = 0
       end
@@ -59,7 +81,7 @@ function gravityToControllableObject(object, box)
       end
     elseif box.gravity.surface == "left" then
       object.position.x = object.position.x - posi
-      if checkCollision() then
+      if checkCollision(object,box) then
         object.position.x = object.position.x + posi
         object.gravity_time = 0
       end
@@ -68,7 +90,7 @@ function gravityToControllableObject(object, box)
       end
     elseif box.gravity.surface == "right" then
       object.position.x = object.position.x + posi
-      if checkCollision() then
+      if checkCollision(object,box) then
         object.position.x = object.position.x - posi
         object.gravity_time = 0
       end
@@ -77,12 +99,51 @@ function gravityToControllableObject(object, box)
       end
     elseif box.gravity.surface == "background" then
       object.position.z = object.position.z - posi
-      if checkCollision() then
+      if checkCollision(object,box) then
         object.position.z = object.position.z + posi
         object.gravity_time = 0
       end
       if love.keyboard.isDown("down") and object.speed["z+"] > 0 then
         object.gravity_time = 0
+      end
+    end
+  end
+
+  function updateControllableObject(object, box)
+    if love.keyboard.isDown(RIGHT) then
+      object.position.x = object.position.x + object.speed["x+"]*DT
+      if checkCollision(object,box) then
+        object.position.x = object.position.x - object.speed["x+"]*DT
+      end
+    end
+    if love.keyboard.isDown(LEFT) then
+      object.position.x = object.position.x - object.speed["x-"]*DT
+      if checkCollision(object,box) then
+        object.position.x = object.position.x + object.speed["x-"]*DT
+      end
+    end
+    if love.keyboard.isDown(UP) then
+      object.position.z = object.position.z - object.speed["z-"]*DT
+      if checkCollision(object,box) then
+        object.position.z = object.position.z + object.speed["z-"]*DT
+      end
+    end
+    if love.keyboard.isDown(DOWN) then
+      object.position.z = object.position.z + object.speed["z+"]*DT
+      if checkCollision(object,box) then
+        object.position.z = object.position.z - object.speed["z+"]*DT
+      end
+    end
+    if love.keyboard.isDown("z") then
+      object.position.y = object.position.y - object.speed["y-"]*DT
+      if checkCollision(object,box) then
+        object.position.y = object.position.y + object.speed["y-"]*DT
+      end
+    end
+    if love.keyboard.isDown("a") then
+      object.position.y = object.position.y + object.speed["y+"]*DT
+      if checkCollision(object,box) then
+        object.position.y = object.position.y - object.speed["y+"]*DT
       end
     end
   end
