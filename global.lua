@@ -33,7 +33,7 @@ function getLevel()
   return level
 end
 
-function gravity(object, box)
+function gravityToControllableObject(object, box)
   if box.gravity.surface ~= "none" and object.gravity_sensitive then
     object.gravity_time = object.gravity_time + DT
 

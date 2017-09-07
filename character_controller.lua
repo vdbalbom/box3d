@@ -29,7 +29,7 @@ function updateCharacter()
   p = getPlayer()
   b = getBox()
 
-  gravity(p,b)
+  gravityToControllableObject(p,b)
 
   if love.keyboard.isDown(RIGHT) then
     p.position.x = p.position.x + p.speed["x+"]*DT
