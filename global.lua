@@ -146,5 +146,13 @@ function gravityToControllableObject(object, box)
         object.position.y = object.position.y - object.speed["y+"]*DT
       end
     end
+    if love.keyboard.isDown("x") or object.jump_time < 2*object.speed["jump"]/box.gravity.acceleration then
+      if object.gravity_time == 0 and object.jump_time < 2*object.speed["jump"]/box.gravity.acceleration then
+        object.jump_time = 2*object.speed["jump"]/box.gravity.acceleration
+      else
+        object.jump_time = object.jump_time - DT
+        object.position.y = object.position.y + object.speed["jump"]*object.jump_time
+      end
+    end
   end
 end

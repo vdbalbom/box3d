@@ -12,7 +12,8 @@ player = {
     ["y+"] = 200,
     ["y-"] = 200,
     ["z+"] = 200,
-    ["z-"] = 200
+    ["z-"] = 200,
+    ["jump"] = 5
   },
   jump_height = 200,
   position = {
@@ -21,5 +22,6 @@ player = {
     z = 100
   },
   gravity_time = 0,
-  gravity_sensitive = true
+  gravity_sensitive = true,
+  jump_time = 2
 }
