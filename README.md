@@ -1,24 +1,40 @@
-# gamemaker
+# 3D Box
 
 ### Linux
 #### Install Lua
-``` sudo apt-get install lua5.3 ```
+```
+$ sudo apt-get install lua5.3
+```
 #### Install Löve
-```sudo apt-get install love```
+```
+$ sudo apt-get install love
+```
 #### Clone this repo
-```git clone https://github.com/vdbalbom/gamemaker.git```
+```
+$ git clone https://github.com/vdbalbom/box3d.git
+```
 #### Run
-```love gamemaker```
+```
+$ love box3d
+```
 
 ### MacOs
 #### Install Lua
-``` brew install lua ```
+```
+$ brew install lua
+```
 #### Install Löve
-```brew cask install love```
+```
+$ brew cask install love
+```
 #### Clone this repo
-```git clone https://github.com/vdbalbom/gamemaker.git```
+```
+$ git clone https://github.com/vdbalbom/box3d.git
+```
 #### Run
-```open -n -a love "gamemaker"```
+```
+$ open -n -a love "box3d"
+```
 
 ### Controls
 | <b>Action</b>   | <b>Control</b> |
@@ -27,7 +43,5 @@
 |    Move Left    |        ←       |
 |  Move Backward  |        ↑       |
 |   Move Forward  |        ↓       |
-|       Jump      |        z       |
-
-#### Pig's sprites source:
-##### https://www.spriters-resource.com/pc_computer/adventuretimeexplorethedungeonbecauseidontknow/sheet/59168/
+|     Move Up     |        a       |
+|    Move Down    |        z       |
