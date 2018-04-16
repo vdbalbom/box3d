@@ -1,4 +1,4 @@
-level = {
+config = {
   player_initial_position = {
     x = 500,
     y = 825,

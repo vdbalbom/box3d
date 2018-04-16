@@ -10,7 +10,7 @@ FRONT = "front"
 FILL = "fill"
 LINE = "line"
 MARGIN = 4
-CURRENT_LEVEL = "level1"
+CURRENT_CONFIG = "config1"
 RESOLUTION = 100 -- percent
 
 function calcResolution(number)
@@ -23,14 +23,14 @@ function getPlayer()
 end
 
 function getBox()
-  require("sample/levels/" .. CURRENT_LEVEL .. "/info")
-  require("sample/boxes/" .. level.box .. "/info")
+  require("sample/configs/" .. CURRENT_CONFIG .. "/info")
+  require("sample/boxes/" .. config.box .. "/info")
   return box
 end
 
 function getLevel()
-  require("sample/levels/" .. CURRENT_LEVEL .. "/info")
-  return level
+  require("sample/configs/" .. CURRENT_CONFIG .. "/info")
+  return config
 end
 
 function checkBoxCollision(object,box)
