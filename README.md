@@ -1,4 +1,7 @@
 # 3D Box
+Experiment using lua+löve to create a 3d box space
+
+![alt text](sample.jpg)
 
 ### Linux
 #### Install Lua
